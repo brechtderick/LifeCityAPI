@@ -136,7 +136,7 @@ namespace LifeCityAPI
                 endpoints.MapControllers();
             });
 
-            emotieregulatieDataInitializer.InitializeData();
+            emotieregulatieDataInitializer.InitializeData().Wait();
         }
     }
 }

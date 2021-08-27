@@ -26,9 +26,9 @@ namespace LifeCityAPI.Data
                 _dbContext.Customers.Add(customer);
                 await CreateUser(customer.Email, "P@ssword1111");
 
-                Customer customer1 = new Customer { Email = "customer@email.com", FirstName = "customer", LastName = "one" };
+                Customer customer1 = new Customer { Email = "brecht.de.rick@gmail.com", FirstName = "brecht", LastName = "de rick" };
                 _dbContext.Customers.Add(customer1);
-                await CreateUser(customer1.Email, "P@ssword1111");
+                await CreateUser(customer1.Email, "Password1!");
 
                 _dbContext.SaveChanges();
                 //seeding the database with recipes, see DBContext

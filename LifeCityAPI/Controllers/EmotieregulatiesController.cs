@@ -41,6 +41,15 @@ namespace LifeCityAPI.Controllers
 
         }
 
+        [HttpGet("{user}")]
+        public IEnumerable<Emotieregulatie> GetEmotieregulatieUser(string user)
+        {
+            IEnumerable<Emotieregulatie> emotieregulatie = _emotieregulatieRepository.GetByUser(user);
+            if (emotieregulatie == null) return (IEnumerable < Emotieregulatie >) NotFound();
+            return emotieregulatie;
+
+        }
+
         [HttpPost] 
         public ActionResult<Emotieregulatie> PostEmotieregulatie(Emotieregulatie emotieregulatie) 
         {

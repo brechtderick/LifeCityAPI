@@ -8,6 +8,7 @@ namespace LifeCityAPI.Models
     public interface IEmotieregulatieRepository
     {
         Emotieregulatie GetBy(int id);
+        IEnumerable<Emotieregulatie> GetByUser(string user);
         bool TryGetEmotieregulatie(int id, out Emotieregulatie emotieregulatie);
         IEnumerable<Emotieregulatie> GetAll();
         IEnumerable<Emotieregulatie> GetBy(string beschrijving = null, string user = null, string emotie = null);

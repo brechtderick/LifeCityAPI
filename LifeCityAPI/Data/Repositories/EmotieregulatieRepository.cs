@@ -28,6 +28,11 @@ namespace LifeCityAPI.Data.Repositories
             return _emotieregulaties.SingleOrDefault(e => e.Id == id);
         }
 
+        public IEnumerable<Emotieregulatie> GetByUser(string user)
+        {
+            return _emotieregulaties.Where(e => e.User == user).ToList();
+        }
+
         public bool TryGetEmotieregulatie(int id, out Emotieregulatie emotieregulatie)
         {
             emotieregulatie = _context.Emotieregulaties.FirstOrDefault(e => e.Id == id);
